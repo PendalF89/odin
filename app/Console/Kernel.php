@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('scan:uptime')->everyFiveMinutes()->withoutOverlapping()->runInBackground();
+        $schedule->command('scan:uptime')->everyMinute()->withoutOverlapping()->runInBackground();
         $schedule->command('scan:robots')->hourly()->withoutOverlapping()->runInBackground();
         $schedule->command('scan:dns')->hourly()->withoutOverlapping()->runInBackground();
         $schedule->command('scan:certificates')->dailyAt('08:00:00')->withoutOverlapping()->runInBackground();
